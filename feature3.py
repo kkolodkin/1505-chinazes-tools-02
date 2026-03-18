@@ -86,10 +86,10 @@ def bot_input(gm, bot, player, stepcnt):
                 gm[i][row.index(0)]=bot
                 return gm
     ### eariy logic
-    if stepcnt == 1:
+    if stepcnt == 2:
         gm[random.sample([0,2],1)[0]][random.sample([0,2],1)[0]]=bot
         return gm
-    if stepcnt == 2:
+    if stepcnt == 3:
         if player in [gm[0][0],gm[0][1],gm[1][0]]:
             gm[2][2]=bot
             return gm
@@ -102,7 +102,7 @@ def bot_input(gm, bot, player, stepcnt):
         elif gm[2][0] == player:
             gm[0][2] = bot
             return gm
-    #if stepcnt == 3:
+    # random move
     zeroes=[]
     for y in range(3):
         for x in range(3):
@@ -127,22 +127,29 @@ def run():
         if first in [variants[i] for i in range(3,6)]:
             bot=-1
             player=1
-            gm[1][1]=bot
             stepcnt+=1
+            gm[1][1]=bot
         else:
             bot=1
             player=-1
         board(gm)
         while is_tie(gm)==False and is_win(gm)==False:
-            gm=player_input(gm, player)
             stepcnt+=1
+            gm=player_input(gm, player)
             board(gm)
             if is_tie(gm)== True or is_win(gm)!=False:
                 break
-            gm=bot_input(gm, bot, player, stepcnt)
+            print('Ход бота:')
             stepcnt+=1
+            gm=bot_input(gm, bot, player, stepcnt)
             board(gm)
-        
+        if is_tie(gm)==True:
+            print('Ничья!')
+        else:
+            if is_win(gm)==player:
+                print('Ура! Вы победили!')
+            else:
+                print('Вы проиграли...')
         game=input('Хотите сыграть ещё раз? y/n:')
         while game!='y' and game != 'n':
             print('Некорректный ввод!')
