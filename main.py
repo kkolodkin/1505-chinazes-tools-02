@@ -1,5 +1,4 @@
-import test
-
+import feature1,feature2,feature3,feature4,feature5,feature6,feature7,feature8,feature9,feature13
 
 def print_menu():
     print(
@@ -7,8 +6,22 @@ def print_menu():
 ============================
 Menu options
 
-1. Run Test Module
-2. Exit
+1. Number guess game
+2. Bulls and cows game
+3. Tic-tac-toe game
+4. Rock, Paper, Scissors game
+5. Quiz game
+6. Password Generator
+7. Random Number Generator
+8. Encryptor/Decryptor
+9. Weather in Moscow
+10.Random Quote
+11.Random Advice
+12.Random Joke About Programmers
+13.Random Fact
+14.Russian-English translator
+15. Exit
+
 ============================
 ''')
 
@@ -20,9 +33,29 @@ while 1:
     print()
     
     if user_choice == '1':
-        test.run()
+        feature1.run()
     elif user_choice == '2':
+        feature2.run()
+    elif user_choice == '3':
+        feature3.run()
+    elif user_choice == '4':
+        feature4.run()
+    elif user_choice == '5':
+        feature5.run()
+    elif user_choice == '6':
+        feature6.run()
+    elif user_choice == '7':
+        feature7.run()
+    elif user_choice == '8':
+        feature8.run()
+    elif user_choice == '9':
+        feature9.run()
+    elif user_choice == '13':
+        feature13.run()
+    elif user_choice == '15':
         print("Bye!")
         break
+    elif user_choice in ['10','11','12','14']:
+        print("This option is comming soon...")
     else:
         print("Invalid choice. Try again.")

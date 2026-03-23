@@ -31,7 +31,7 @@ def display_question(question_data):
     
     return options, correct_answer
 
-def play_quiz():
+def run():
     score = 0
     print("Добро пожаловать в викторину!")
     
@@ -65,4 +65,4 @@ def play_quiz():
             break
 
 if __name__ == "__main__":
-    play_quiz()
+    run()

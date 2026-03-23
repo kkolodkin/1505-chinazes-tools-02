@@ -2,7 +2,7 @@ import random
 import string
  
  
-def generate_password():
+def run():
    """Main password generator."""
    print("\n=== Генератор Паролей ===")
  
@@ -18,11 +18,11 @@ def generate_password():
  
    
    use_digits = input("Использовать цифры? (да/нет): ").lower() in \
-                ['да', 'yes', 'y']
+                ['да', 'yes', 'y','1']
    use_special = input("Использовать спец. символы? (да/нет): ").lower() in \
-                 ['да', 'yes', 'y']
+                 ['да', 'yes', 'y','1']
    use_uppercase = input("Использовать заглавные буквы? (да/нет): ").lower() \
-                   in ['да', 'yes', 'y']
+                   in ['да', 'yes', 'y','1']
  
 
    characters = string.ascii_lowercase
@@ -45,7 +45,7 @@ def generate_password():
  
 if __name__ == "__main__":
    while True:
-       generate_password()
+       run()
        again = input("\nГенерировать еще? (да/нет): ").lower()
-       if again not in ['да', 'yes', 'y']:
+       if again not in ['да', 'yes', 'y','1']:
            break

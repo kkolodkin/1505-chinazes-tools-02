@@ -13,4 +13,5 @@ def run():
         print(f"Скорость ветра: {wind_speed} км/ч")
     except requests.exceptions.RequestException as e:
         print(f"Ошибка при подключении к API: {e}")
-run()
+if __name__ == "__main__":
+    run()

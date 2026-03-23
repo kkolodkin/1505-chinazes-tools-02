@@ -13,4 +13,5 @@ def run():
                 print('Ошибка ввода данных!!!')
         except ValueError:
             print('Ошибка ввода данных!!!')
-run()
+if __name__ == "__main__":
+    run()

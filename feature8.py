@@ -21,4 +21,5 @@ def run():
         else:
             res += i
     print("Зашифрованное сообщение:", res)
-run()
+if __name__ == "__main__":
+    run()

@@ -154,4 +154,5 @@ def run():
         while game!='y' and game != 'n':
             print('Некорректный ввод!')
             game=input('Хотите сыграть ещё раз? y/n:')
-run()
+if __name__ == "__main__":
+    run()
