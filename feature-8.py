@@ -1,4 +1,4 @@
-def feature_8():
+def run():
     s = input("Введите сообщение: ")
     flag = True
     while flag:
@@ -21,4 +21,4 @@ def feature_8():
         else:
             res += i
     print("Зашифрованное сообщение:", res)
-feature_8()
+run()
