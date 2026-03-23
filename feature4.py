@@ -1,5 +1,5 @@
 import random
-def rock_paper_scissors():
+def run():
     """Main rock paper scissors game."""
     choices = ['камень', 'ножницы', 'бумага']
     choice_map = {
@@ -48,4 +48,4 @@ def rock_paper_scissors():
 
 
 if __name__ == "__main__":
-    rock_paper_scissors()
+    run()
