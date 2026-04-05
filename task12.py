@@ -1,6 +1,6 @@
 import requests
 
-def task_12():
+def run():
     print("\n--- Шутка ---")
     response = requests.get("https://v2.jokeapi.dev/joke/Programming")
     data = response.json()
@@ -10,4 +10,4 @@ def task_12():
     else:  
         print(f"{data['setup']}\n{data['delivery']}")
 
-task_12()
+run()
