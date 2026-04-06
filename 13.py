@@ -29,5 +29,6 @@ def run():
         print(f"⚠️ Ошибка при запросе: {e}")
 
 
-run()
 
+if __name__ == "__main__":
+    run()
