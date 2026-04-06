@@ -1,28 +1,39 @@
-import test
+"""
+Задание 14: Русско-английский переводчик.
+
+Разработчик:
+Тестировщик:
+Ответственный за CR:
+"""
+
+import urllib.request
+import urllib.parse
+import json
+import ssl
 
 
-def print_menu():
-    print(
-'''
-============================
-Menu options
+def run():
+    """Запрашивает текст на английском и переводит его на русский."""
+    print("Переводчик: Английский → Русский")
 
-1. Run Test Module
-2. Exit
-============================
-''')
+    text = input("Введите текст на английском (до 200 символов): ").strip()
 
-print("Hello! Welcome to Chinazes Tools!")
+    if not text or len(text) > 200:
+        print("Ошибка: текст пустой или превышает 200 символов.")
+        return
 
-while 1:
-    print_menu()
-    user_choice = input("Select a menu option number: ")
-    print()
-    
-    if user_choice == '1':
-        test.run()
-    elif user_choice == '2':
-        print("Bye!")
-        break
-    else:
-        print("Invalid choice. Try again.")
+    params = urllib.parse.urlencode({"q": text, "langpair": "en|ru"})
+    url = f"https://api.mymemory.translated.net/get?{params}"
+
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+
+    with urllib.request.urlopen(url, timeout=10, context=ctx) as response:
+        data = json.loads(response.read().decode("utf-8"))
+
+    print("Перевод:", data["responseData"]["translatedText"])
+
+
+if __name__ == "__main__":
+    run()
