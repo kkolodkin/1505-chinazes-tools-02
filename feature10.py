@@ -10,4 +10,5 @@ def run():
     data = response.json()
     print(f"\"{data['content']}\"\n— {data['author']}")
 
-run()
+if __name__ == "__main__":
+    run()
