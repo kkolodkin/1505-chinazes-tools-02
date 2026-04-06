@@ -10,4 +10,5 @@ def run():
     else:  
         print(f"{data['setup']}\n{data['delivery']}")
 
-run()
+if __name__ == "__main__":
+    run()
