@@ -27,8 +27,3 @@ def run():
         print(f"❌ Ошибка HTTP: {e}")
     except requests.RequestException as e:
         print(f"⚠️ Ошибка при запросе: {e}")
-
-
-if __name__ == "__main__":
-    run()
-
