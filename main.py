@@ -1,4 +1,7 @@
-import feature1,feature2,feature3,feature4,feature5,feature6,feature7,feature8,feature9,feature13
+import feature1,feature2,feature3,feature4,feature5
+import feature6,feature7,feature8,feature9,feature10
+import feature11,feature12,feature13
+
 
 def print_menu():
     print(
@@ -50,12 +53,18 @@ while 1:
         feature8.run()
     elif user_choice == '9':
         feature9.run()
+    elif user_choice == '10':
+        feature10.run()
+    elif user_choice == '11':
+        feature11.run()
+    elif user_choice == '12':
+        feature12.run()
     elif user_choice == '13':
         feature13.run()
     elif user_choice == '15':
         print("Bye!")
         break
-    elif user_choice in ['10','11','12','14']:
+    elif user_choice == '14':
         print("This option is comming soon...")
     else:
         print("Invalid choice. Try again.")
